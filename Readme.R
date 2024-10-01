@@ -20,3 +20,6 @@ Groups_2_DBSCAN.R:
   
 Groups_Comparision.R:
   Is the file containing the R code for the comparisons of the new groups with the GDV groups.
+
+Webscrapping.R
+  Is the file containing the R code for the webscarpping of additional features to be merged with data and used in the modelling and the clustering.
