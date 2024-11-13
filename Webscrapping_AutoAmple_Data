@@ -1,0 +1,313 @@
+library(xml2)
+library(RCurl)
+library(dplyr)
+library(rvest)
+library(data.table)
+library(tidyverse)
+
+
+
+
+base_url <- "http://www.autoampel.de/typklassen/liste/"
+tables <- list()
+
+for (i in seq(1, 100, 9)) {
+  # Determine the range of pages to scrape in the current batch
+  batch_start <- i
+  batch_end <- min(i + 8, 100)
+  
+  # Loop through each page
+  for (page in batch_start:batch_end) {
+    # Generate the URL for the current page
+    url <- paste0(base_url, page)
+    
+    # Add a delay of 10 seconds before each request
+    Sys.sleep(10)
+    
+    # Read the HTML content of the page
+    webpage <- read_html(url)
+    
+    # Extract the table from the page
+    table <- html_table(webpage)[[2]]
+    
+    # Add the table to the list
+    tables[[page]] <- table
+  }
+}
+
+
+
+combined_dt1 <- rbindlist(tables)
+combined_df1 <- as.data.frame(combined_dt1)
+
+
+
+### 101 - 200
+
+base_url <- "http://www.autoampel.de/typklassen/liste/"
+tables2 <- list()
+
+for (i in seq(101, 200, 9)) {
+  # Determine the range of pages to scrape in the current batch
+  batch_start <- i
+  batch_end <- min(i + 8, 200)
+  
+  # Loop through each page
+  for (page in batch_start:batch_end) {
+    # Generate the URL for the current page
+    url <- paste0(base_url, page)
+    
+    # Add a delay of 10 seconds before each request
+    Sys.sleep(10)
+    
+    # Read the HTML content of the page
+    webpage <- read_html(url)
+    
+    # Extract the table from the page
+    table <- html_table(webpage)[[2]]
+    
+    # Add the table to the list
+    tables2[[page]] <- table
+  }
+}
+
+
+
+combined_dt2 <- rbindlist(tables2)
+combined_df2 <- as.data.frame(combined_dt2)
+
+### 201 - 300
+
+base_url <- "http://www.autoampel.de/typklassen/liste/"
+tables3 <- list()
+
+for (i in seq(201, 300, 9)) {
+  # Determine the range of pages to scrape in the current batch
+  batch_start <- i
+  batch_end <- min(i + 8, 300)
+  
+  # Loop through each page
+  for (page in batch_start:batch_end) {
+    # Generate the URL for the current page
+    url <- paste0(base_url, page)
+    
+    # Add a delay of 10 seconds before each request
+    Sys.sleep(10)
+    
+    # Read the HTML content of the page
+    webpage <- read_html(url)
+    
+    # Extract the table from the page
+    table <- html_table(webpage)[[2]]
+    
+    # Add the table to the list
+    tables3[[page]] <- table
+  }
+}
+
+
+
+combined_dt3 <- rbindlist(tables3)
+combined_df3 <- as.data.frame(combined_dt3)
+
+### 301 - 400
+
+base_url <- "http://www.autoampel.de/typklassen/liste/"
+tables4 <- list()
+
+for (i in seq(301, 400, 9)) {
+  # Determine the range of pages to scrape in the current batch
+  batch_start <- i
+  batch_end <- min(i + 8, 400)
+  
+  # Loop through each page
+  for (page in batch_start:batch_end) {
+    # Generate the URL for the current page
+    url <- paste0(base_url, page)
+    
+    # Add a delay of 10 seconds before each request
+    Sys.sleep(10)
+    
+    # Read the HTML content of the page
+    webpage <- read_html(url)
+    
+    # Extract the table from the page
+    table <- html_table(webpage)[[2]]
+    
+    # Add the table to the list
+    tables4[[page]] <- table
+  }
+}
+
+
+
+combined_dt4 <- rbindlist(tables4)
+combined_df4 <- as.data.frame(combined_dt4)
+
+### 401 - 500
+
+base_url <- "http://www.autoampel.de/typklassen/liste/"
+tables5 <- list()
+
+for (i in seq(401, 500, 9)) {
+  # Determine the range of pages to scrape in the current batch
+  batch_start <- i
+  batch_end <- min(i + 8, 500)
+  
+  # Loop through each page
+  for (page in batch_start:batch_end) {
+    # Generate the URL for the current page
+    url <- paste0(base_url, page)
+    
+    # Add a delay of 10 seconds before each request
+    Sys.sleep(10)
+    
+    # Read the HTML content of the page
+    webpage <- read_html(url)
+    
+    # Extract the table from the page
+    table <- html_table(webpage)[[2]]
+    
+    # Add the table to the list
+    tables5[[page]] <- table
+  }
+}
+
+
+
+combined_dt5 <- rbindlist(tables5)
+combined_df5 <- as.data.frame(combined_dt5)
+
+### 501 - 600
+
+base_url <- "http://www.autoampel.de/typklassen/liste/"
+tables6 <- list()
+
+for (i in seq(501, 600, 9)) {
+  # Determine the range of pages to scrape in the current batch
+  batch_start <- i
+  batch_end <- min(i + 8, 600)
+  
+  # Loop through each page
+  for (page in batch_start:batch_end) {
+    # Generate the URL for the current page
+    url <- paste0(base_url, page)
+    
+    # Add a delay of 10 seconds before each request
+    Sys.sleep(10)
+    
+    # Read the HTML content of the page
+    webpage <- read_html(url)
+    
+    # Extract the table from the page
+    table <- html_table(webpage)[[2]]
+    
+    # Add the table to the list
+    tables6[[page]] <- table
+  }
+}
+
+
+
+combined_dt6 <- rbindlist(tables6)
+combined_df6 <- as.data.frame(combined_dt6)
+
+### 601 - 643
+base_url <- "http://www.autoampel.de/typklassen/liste/"
+tables7 <- list()
+
+for (i in seq(601, 643, 9)) {
+  # Determine the range of pages to scrape in the current batch
+  batch_start <- i
+  batch_end <- min(i + 8, 643)
+  
+  # Loop through each page
+  for (page in batch_start:batch_end) {
+    # Generate the URL for the current page
+    url <- paste0(base_url, page)
+    
+    # Add a delay of 10 seconds before each request
+    Sys.sleep(10)
+    
+    # Read the HTML content of the page
+    webpage <- read_html(url)
+    
+    # Extract the table from the page
+    table <- html_table(webpage)[[2]]
+    
+    # Add the table to the list
+    tables7[[page]] <- table
+  }
+}
+
+
+
+combined_dt7 <- rbindlist(tables7)
+combined_df7 <- as.data.frame(combined_dt7)
+
+combined_df <- rbind(combined_df1, combined_df2, combined_df3, combined_df4, 
+                     combined_df5, combined_df6, combined_df7)
+
+
+######### preparing hsn/tsn column
+
+# Separate the HSN/TSN into two columns using the "/" delimiter
+
+combined_df <- combined_df %>%
+  tidyr::separate("HSN/TSN", into = c("hsn", "tsn"), sep = "/", remove = FALSE)
+
+# Separate HP and Kw
+
+combined_df$HP <- as.numeric(gsub(" \\(.*", "", combined_df$`PS (kW)`))
+combined_df$kW <- as.numeric(gsub(".*\\(", "", gsub("\\)", "", combined_df$`PS (kW)`)))
+
+## Separat years_of_construction
+all_valid_format <- all(grepl("^\\d{4}-\\d{4}$", combined_df$Baujahre))
+
+if(all_valid_format) {
+  cat("All data in 'years_of_construction' has the correct format with start and end dates.")
+} else {
+  cat("Some data in 'years_of_construction' does not have the correct format with start and end dates.")
+}
+
+incorrect_format_rows <- combined_df[!grepl("^\\d{4}-\\d{4}$", combined_df$Baujahre),]
+sum(grepl("^ab", combined_df$Baujahre)) #5561
+nrow(incorrect_format_rows) #6026
+nrow(combined_df) #32111
+
+
+
+combined_df$construction_start <- as.numeric(sub("-.*", "", combined_df$Baujahre))
+combined_df$construction_end <- as.numeric(sub(".*-", "", combined_df$Baujahre))
+
+
+## Displacement 
+nrow(webscr_data[webscr_data$`cm³` == "–",])
+nrow(clr_mergeddata[clr_mergeddata$Kraftstoff == "Elektro",])    
+nrow(clr_mergeddata[clr_mergeddata$Kraftstoff == "Elektro"
+                    |clr_mergeddata$Kraftstoff == "Benzin/Elektro"
+                    |clr_mergeddata$Kraftstoff == "Diesel/Elektro"
+                    |clr_mergeddata$Kraftstoff == "Wasserstoff/Elektro",])       
+
+
+###
+
+webscr_data <- combined_df
+webscr_data$tsn <- factor(webscr_data$tsn)
+webscr_data$hsn <- factor(webscr_data$hsn)
+sum(is.na(webscr_data))
+
+
+##Write Csv File
+
+webscr_data <- subset(webscr_data, select = -c(`KH▼`, TK, VK,`PS (kW)` , `HSN/TSN`))
+colnames(webscr_data)[colnames(webscr_data) == "cm³"] <- "cc"
+#head(webscr_data)
+write.csv(webscr_data , "webscr_data_AutoAmple")
+
+
+
+
+
+
+
